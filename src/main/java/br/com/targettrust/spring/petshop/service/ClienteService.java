@@ -1,7 +1,7 @@
-package br.com.targettruest.spring.petshop.service;
+package br.com.targettrust.spring.petshop.service;
 
-import br.com.targettruest.spring.petshop.model.Cliente;
-import br.com.targettruest.spring.petshop.repository.ClienteRepository;
+import br.com.targettrust.spring.petshop.model.Cliente;
+import br.com.targettrust.spring.petshop.repository.ClienteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

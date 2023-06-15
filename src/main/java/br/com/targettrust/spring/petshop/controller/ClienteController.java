@@ -1,7 +1,7 @@
-package br.com.targettruest.spring.petshop.controller;
+package br.com.targettrust.spring.petshop.controller;
 
-import br.com.targettruest.spring.petshop.model.Cliente;
-import br.com.targettruest.spring.petshop.service.ClienteService;
+import br.com.targettrust.spring.petshop.model.Cliente;
+import br.com.targettrust.spring.petshop.service.ClienteService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

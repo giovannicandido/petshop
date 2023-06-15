@@ -1,4 +1,4 @@
-package br.com.targettruest.spring.petshop.model;
+package br.com.targettrust.spring.petshop.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

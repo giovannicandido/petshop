@@ -1,6 +1,6 @@
-package br.com.targettruest.spring.petshop.repository;
+package br.com.targettrust.spring.petshop.repository;
 
-import br.com.targettruest.spring.petshop.model.Cliente;
+import br.com.targettrust.spring.petshop.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

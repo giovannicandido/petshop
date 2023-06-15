@@ -1,4 +1,4 @@
-package br.com.targettruest.spring.petshop;
+package br.com.targettrust.spring.petshop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
