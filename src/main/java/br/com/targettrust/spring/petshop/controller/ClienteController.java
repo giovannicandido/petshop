@@ -26,4 +26,9 @@ public class ClienteController {
     public Cliente criarCliente(@RequestBody @Valid Cliente cliente) {
         return service.salvar(cliente);
     }
+
+    @DeleteMapping("/{id}")
+    public void deletarCliente(@PathVariable("id") String cpf) {
+        service.deletarCliente(cpf);
+    }
 }

@@ -21,6 +21,14 @@ public class ClienteService {
     }
 
     public Cliente salvar(Cliente cliente) {
+        if(repository.findById(cliente.getCpf())
+                .isPresent()) {
+            throw new RuntimeException("Cliente já existe no banco");
+        };
         return repository.save(cliente);
+    }
+
+    public void deletarCliente(String cpf) {
+        repository.deleteById(cpf);
     }
 }
