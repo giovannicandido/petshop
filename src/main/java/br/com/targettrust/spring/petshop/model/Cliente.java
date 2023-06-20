@@ -1,9 +1,7 @@
 package br.com.targettrust.spring.petshop.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +21,9 @@ public class Cliente {
     @NotBlank(message = "Nome não pode ser vazio")
     private String nome;
 
-    @ManyToMany(mappedBy = "clientes")
+    @ManyToMany(mappedBy = "clientes", cascade = CascadeType.REMOVE)
     List<Unidade> unidades;
+
+    @OneToMany(mappedBy = "cliente")
+    List<Animal> animais;
 }

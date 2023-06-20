@@ -28,6 +28,7 @@ public class AnimalDTOMapper {
         AnimalDTO dto = new AnimalDTO();
         dto.setId(animal.getId());
         dto.setNome(animal.getNome());
+        dto.setIdCliente(animal.getCliente().getCpf());
         if(animal instanceof Reptil) {
             dto.setTipo(TipoAnimal.REPTIL);
             dto.setPeconhento(((Reptil) animal).getPeconhento());

@@ -19,4 +19,9 @@ public abstract class Animal {
     @Column(length = 150)
     protected String nome;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false, foreignKey =
+    @ForeignKey(name = "fk_animal_cliente"))
+    protected Cliente cliente;
+
 }

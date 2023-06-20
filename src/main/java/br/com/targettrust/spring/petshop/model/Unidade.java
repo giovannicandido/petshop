@@ -1,5 +1,6 @@
 package br.com.targettrust.spring.petshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +26,9 @@ public class Unidade {
             @JoinColumn(name = "unidade_id_custom",
             referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_unidade_cliente_unidade")
             )},
-            inverseJoinColumns = @JoinColumn(name = "cliente_cpf", referencedColumnName = "cpf", foreignKey = @ForeignKey(name = "fk_unidade_cliente_cliente"))
+            inverseJoinColumns = @JoinColumn(name = "cliente_cpf", referencedColumnName = "cpf",
+                    foreignKey = @ForeignKey(name = "fk_unidade_cliente_cliente"))
     )
+    @JsonIgnore
     private List<Cliente> clientes;
 }

@@ -11,6 +11,7 @@ public class AnimalDTO {
     private String nome;
     private Integer quantidadePatas;
     private Boolean peconhento;
+    private String idCliente;
 
     @NotNull
     private TipoAnimal tipo;
