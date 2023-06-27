@@ -18,7 +18,7 @@ public class SecurityUser {
      * @return
      */
     public Atendente getCurrentAtendente() {
-        // pegaria o o email do usuario logado atualmente
+        // pegaria o email do usuario logado atualmente
         // depende da implementação do Spring Security
 
         Atendente atendente = atendenteRepository.findByUserName(EMAIL_USUARIO_LOGADO);

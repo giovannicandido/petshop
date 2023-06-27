@@ -23,6 +23,8 @@ public class Atendimento {
     @Column(nullable = false)
     @CreatedDate
     private LocalDateTime data;
+
+    private LocalDateTime dataFinalizacao;
     @Column(nullable = false, columnDefinition = "boolean default false")
     private Boolean pagamentoEfetuado;
     private BigDecimal valorConsulta;
@@ -36,7 +38,7 @@ public class Atendimento {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "unidade_id", foreignKey = @ForeignKey(name = "fk_atendimento_unidade"), nullable = false)
     private Unidade unidade;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER )
     @JoinColumn(name = "cliente_id", foreignKey = @ForeignKey(name = "fk_atendimento_cliente"), nullable = false)
     private Cliente cliente;
     @ManyToOne(fetch = FetchType.EAGER)
@@ -49,5 +51,12 @@ public class Atendimento {
             inverseJoinColumns = @JoinColumn(name = "produto_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_atendimento_produto_produto"))
     )
     private List<Produto> produtos;
+
+    // somente um exemplo
+    public void validarEstadoAtendimentoEdicao(EstadoAtendimento paraEstado) {
+        if(estado != EstadoAtendimento.EM_ABERTO) {
+            throw new RuntimeException("atendimento não está em aberto e não pode ser editado");
+        }
+    }
 
 }

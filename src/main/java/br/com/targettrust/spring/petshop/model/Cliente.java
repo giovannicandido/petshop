@@ -22,8 +22,10 @@ public class Cliente {
     private String nome;
 
     @ManyToMany(mappedBy = "clientes", cascade = CascadeType.REMOVE)
+    @JsonIgnore
     List<Unidade> unidades;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
     List<Animal> animais;
 }
