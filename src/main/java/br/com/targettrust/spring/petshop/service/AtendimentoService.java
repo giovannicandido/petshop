@@ -7,6 +7,7 @@ import br.com.targettrust.spring.petshop.model.*;
 import br.com.targettrust.spring.petshop.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -127,6 +128,7 @@ public class AtendimentoService {
         repository.save(atendimento);
     }
 
+    @Transactional // inicia uma transacao no banco de dados
     public void finalizarAtendimento(Long idAtendimento, FinalizarAtendimentoDTO request) {
         Atendimento atendimento = validaAtendimento(idAtendimento);
 
@@ -137,6 +139,9 @@ public class AtendimentoService {
         atendimento.setPagamentoEfetuado(request.getPagamentoEfetuado());
         atendimento.setEstado(EstadoAtendimento.FINALIZADO);
         repository.save(atendimento);
+        // emite a nota fiscal exemplo
+//        filaMensagem.emitir(new AtendimentoFinalizado()); ou
+        // notafiscalService.emitir(idAtendimento)
     }
 
     private Atendimento validaAtendimento(Long idAtendimento) {
